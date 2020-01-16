@@ -6,6 +6,9 @@ import { RouterModule } from '@angular/router';
 
 import { HomePage } from './home.page';
 
+import { Geolocation } from '@ionic-native/geolocation/ngx';
+import { NativeGeocoder } from '@ionic-native/native-geocoder/ngx';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -17,7 +20,7 @@ import { HomePage } from './home.page';
         component: HomePage
       }
     ])
-  ],
-  declarations: [HomePage]
+  ],providers :[Geolocation, NativeGeocoder],
+  declarations: [HomePage],
 })
 export class HomePageModule {}
