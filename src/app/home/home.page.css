@@ -1,0 +1,49 @@
+ion-searchbar {
+  color: black;
+}
+
+ion-searchbar ::-webkit-input-placeholder {
+  font-weight: 700;
+  color: black;
+}
+
+ion-searchbar :-ms-input-placeholder {
+  font-weight: 700;
+  color: black;
+}
+
+ion-searchbar ::-ms-input-placeholder {
+  font-weight: 700;
+  color: black;
+}
+
+ion-searchbar ::placeholder {
+  font-weight: 700;
+  color: black;
+}
+
+.searchbar-input-container .searchbar-input {
+  border-radius: 0 !important;
+}
+
+ion-searchbar {
+  --background: #fff;
+}
+
+ion-list {
+  background-color: #fff;
+  display: contents;
+}
+
+ion-list list-item {
+  margin: 0 10px 0 10px;
+}
+
+list-item {
+  margin: 0 10px 0 10px;
+}
+
+.sc-ion-searchbar-md-h {
+  background: none;
+}
+/*# sourceMappingURL=home.page.css.map */

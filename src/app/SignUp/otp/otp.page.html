@@ -1,0 +1,84 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title text-center>Send Code</ion-title> 
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+
+  <div style="padding-top: 10%;">
+
+  <ion-list>
+    <ion-img src="../../../assets/PWA-logo/88.png" id="sz"></ion-img>
+  </ion-list>
+
+  <ion-text>
+    <div class="ion-padding">
+      <div class="ion-text-center">
+        Please check your SMS.<br>We just sent a verification code on your phone<br>{{phone}}
+      </div>
+    </div>
+  </ion-text>  
+
+  <div>
+    <form [formGroup]="otpform" (submit)="verifyOtp(otpform)" novalidate>
+    <ion-item>
+      <ion-label position="stacked">Enter OTP <ion-text color="danger">*</ion-text></ion-label>
+      <ion-input pattern="\d{4}" text-center formControlName="otp" type="tel" placeholder="Your phone number" 
+      [class.invalid]="!otpform.controls.otp.valid && otpform.controls.otp.dirty" ></ion-input>
+    </ion-item> 
+
+
+    <ion-list>
+      <div class="ion-padding">
+        <ion-button expand="block" type="submit"  [disabled]="!otpform.valid" class="ion-no-margin">Verify</ion-button>
+      </div>
+    </ion-list>
+    </form>
+  </div>
+
+  
+
+  <ion-grid>
+    <ion-row>
+     <ion-col> 
+       <ion-text>
+         <div class="ion-padding">
+           <div class="ion-text-center">
+             Didn't get a code?<ion-text color="primary"> Try Again</ion-text> 
+           </div>
+         </div>
+       </ion-text>
+     </ion-col>
+   </ion-row>
+  </ion-grid>
+
+ 
+
+ 
+
+  <!-- start grid -->
+
+ <ion-grid>
+   <ion-row>
+    <ion-col> 
+      <ion-text>
+        <div class="ion-padding">
+          <div class="ion-text-center">
+            By signing up you have agree to our <br> Terms of Use & Privacy Policy
+          </div>
+        </div>
+      </ion-text>
+    </ion-col>
+  </ion-row>
+ </ion-grid>
+
+  <!-- End of grid -->
+
+
+
+</div>
+</ion-content>
+
+
+

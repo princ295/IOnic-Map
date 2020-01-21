@@ -1,0 +1,112 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title text-center>Sign Up</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+
+  <div style="padding-top: 10%;"> 
+
+  <ion-list>
+    <ion-img src="../../../assets/PWA-logo/88.png" id="sz"></ion-img>
+  </ion-list>
+   
+  <form [formGroup]="phoneForm" (submit)="UpdateNumber(phoneForm)" novalidate>
+
+    <ion-list lines="full" class="ion-no-margin ion-no-padding">
+        <ion-item>
+          <ion-label position="floating">Mobile Number (201) 555-0123</ion-label>
+          <ion-input formControlName="phone" type="tel" placeholder="Your phone number" 
+          [class.invalid]="!phoneForm.controls.phone.valid && phoneForm.controls.phone.dirty" ></ion-input>
+        </ion-item>
+
+        <ion-item no-lines class="error-message" 
+          *ngIf="!phoneForm.controls.phone.valid  && phoneForm.controls.phone.dirty">
+          <p>10 numbers needed e.g 080XXXXXXXXX</p>
+        </ion-item>
+  
+    </ion-list>
+
+    <ion-list>
+      <div class="ion-padding">
+        <ion-button expand="block" type="submit" [disabled]="!phoneForm.valid" class="ion-no-margin">Continue</ion-button>
+      </div>
+    </ion-list>
+  </form>
+
+
+
+
+  
+
+
+ <ion-grid>
+   <ion-row>
+     <ion-col> 
+      <div class="ion-padding">
+        <div class="ion-text-center">
+         You should receive an SMS for verification. Message and data rates may apply
+        </div>
+      </div>
+     </ion-col>
+   </ion-row>
+
+   <ion-row>
+    <ion-col> 
+      <div class="ion-padding">
+        <div class="ion-text-center">
+          <a routerLink="/login" id="edittxt">Already have an account?</a>
+        </div>
+      </div>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col> 
+      <ion-text>
+        <div class="ion-padding">
+          <div class="ion-text-center">
+            By signing up you have agree to our <br> Terms of Use & Privacy Policy
+          </div>
+        </div>
+      </ion-text>
+    </ion-col>
+  </ion-row>
+ </ion-grid>
+
+
+
+ <!-- <ion-list>
+  <ion-text>
+    <div class="ion-padding">
+      <div class="ion-text-center">
+       You should receive an SMS for verification. Message and data rates may apply
+      </div>
+    </div>
+  </ion-text>
+</ion-list>
+
+<ion-list>
+  <div class="ion-padding">
+    <div class="ion-text-center">
+      <a href="#" id="edittxt">Already have an account?</a>
+    </div>
+  </div>
+</ion-list>
+
+<ion-list>
+  <ion-text>
+    <div class="ion-padding">
+      <div class="ion-text-center">
+        By signing up you have agree to our <br> Terms of Use & Privacy Policy
+      </div>
+    </div>
+  </ion-text>
+</ion-list> -->
+
+
+</div>
+</ion-content>
+
+

@@ -1,0 +1,86 @@
+<ion-app>
+  <ion-header translucent>
+    <ion-toolbar>
+      <ion-title text-center>Sign In</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+
+    <div style="padding-top: 8%;">
+
+      <ion-list>
+        <ion-img src="./assets/PWA-logo/88.png" id="sz"></ion-img>
+      </ion-list>
+    </div>
+
+    <ion-list lines="full" class="ion-no-margin ion-no-padding">
+      
+    <form [formGroup]="loginForm" (submit)="loginUser()" novalidate>
+
+    <ion-item>
+      <ion-label position="floating">Phone</ion-label>
+      <!-- <ion-label color='primary' stacked>Email</ion-label> -->
+      <ion-input  formControlName="phone" type="tel" 
+        [class.invalid]="!loginForm.controls.phone.valid && loginForm.controls.phone.dirty">
+      </ion-input>
+    </ion-item>
+      
+
+    <ion-item>
+      <ion-label position="floating">Password</ion-label>
+      <ion-input  formControlName="password" type="password"></ion-input>
+    </ion-item>
+
+    <!-- <div class="ion-padding">
+      <button ion-button block type="submit" [disabled]="!loginForm.valid">Login</button>
+    </div> -->
+
+    <div class="ion-padding">
+      <ion-button expand="block" type="submit" class="ion-no-margin" [disabled]="!loginForm.valid">
+        Login
+      </ion-button>
+    </div>
+
+    </form>
+    <ion-list>
+        <!-- <ion-item>
+          <ion-label class='terms'>I accept the Terms and Conditions</ion-label>
+          <ion-checkbox color="primary" checked slot="start"></ion-checkbox>
+        </ion-item> -->
+      </ion-list>
+
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-button expand="block" fill="outline" color='primary' ion-button block clear routerLink="/phone" >Create a new account</ion-button>
+          </ion-col>
+          <ion-col>
+            <ion-button expand="block" fill="outline" color='primary' ion-button block clear (click)="goToResetPassword()">I forgot my password</ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+        <!-- Login To App Section Can Be Found Below -->
+      <!-- <div class='o_section'>
+
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+                <button *ngIf="!initState" color='light'ion-button block clear (click)="initState = true">
+                    Login
+                  </button>
+            </ion-col>
+            <ion-col>
+                <button *ngIf="!initState" color='light'ion-button block clear (click)="goToSignup()">
+                    Signup
+                  </button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+
+      </div> -->
+
+    </ion-list>
+  </ion-content>
+</ion-app>
+

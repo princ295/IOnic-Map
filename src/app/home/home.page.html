@@ -1,15 +1,59 @@
+
 <div #map>
-  <!-- Searchbar disabled -->
-  <ion-searchbar   (ionChange)="updateSearch()" placeholder="Enter Your Locations Address"></ion-searchbar>
+  
 
+    <!-- Searchbar disabled -->
+    <div [hidden]="block_hide">
+    <ion-searchbar class="searchbar-input-container" [(ngModel)]="search" (ionChange)="searchChange()" placeholder="Add Pick Up Your Locations Address"></ion-searchbar>
 
-  <ion-searchbar [(ngModel)]="autocomplete.query" (ionChange)="updateSearch()" placeholder="Add Pick Up Your Locations Address"></ion-searchbar>
-  <ion-list>
-    <ion-item id="onbar" *ngFor="let item of autocompleteItems" tappable (click)="calculateRoute(item)">
-      {{ item }}
-    </ion-item>
-  </ion-list>
+    <ion-searchbar class="searchbar-input-container" [(ngModel)]="autocomplete.query" (ionChange)="updateSearch()" placeholder="Add Pick Up Your Locations Address"></ion-searchbar>
+    
+    </div>
+    <ion-button [hidden]="button_hide" class="ion-margin-top" color="dark" fill="clear" size="small" (click)="back()">
+      <ion-icon name="arrow-back"></ion-icon>
+    </ion-button>
+
+    
+
+    <div [hidden]="hide">
+      <ion-list style="background-color: white;" [hidden]="!search.length" class="ion-margin-horizontal">
+        <ion-item  id="onbar" *ngFor="let item of searchResult" tappable (click)="changeSource(item.description)">
+          {{ item.description }}
+        </ion-item>
+      </ion-list>
+    </div>
+
+    <ion-list [hidden]="block_hide" style="background-color: white;" class="ion-margin-horizontal">
+      <ion-item  id="onbar" *ngFor="let item of autocompleteItems" tappable (click)="calculateRoute(item)">
+        {{ item }}
+      </ion-item>
+    </ion-list>
+
 </div>
+
+  <!-- for Emargency Calling -->
+  <!-- <ion-button class="ion-margin-top" color="dark" fill="clear" size="small" (click)="back()">
+    <img src="../../assets/emergency-69-413103.png">for Emargency Calling
+  </ion-button> -->
+
+  
+   <!-- button for drive texi or ambulance  -->
+  <ion-footer [hidden]="button_hide">
+      <ion-row class="ion-text-bottom ion-margin-top" class="ion-margin-buttom">
+        <ion-col size="6">
+          <ion-button  [routerLink]="[ '/taxi' ]" expand="full" class="primary">Taxi</ion-button>
+        </ion-col>
+        <ion-col size="6">
+          <ion-button [routerLink]="[ '/ambulance' ]" expand="full" class="secondery">Ambulance</ion-button>
+        </ion-col>
+      </ion-row>
+  </ion-footer>
+
+
+
+
+
+
 <button (click)="getCurrentLocation()">
     <ion-icon name="navigate"></ion-icon>
 </button>
@@ -19,3 +63,4 @@
     <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
   </div>
 </div> -->
+

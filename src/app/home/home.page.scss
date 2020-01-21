@@ -8,3 +8,26 @@ ion-searchbar{
         color: black;
     }
 }
+
+.searchbar-input-container{
+    .searchbar-input{
+        border-radius: 0 !important;
+    }
+}
+ion-searchbar{
+    --background: #fff;
+}
+
+ion-list {
+    background-color: #fff;
+    display: contents;
+    list-item{
+        margin: 0 10px 0 10px;
+    }
+}
+list-item{
+    margin: 0 10px 0 10px;
+}
+.sc-ion-searchbar-md-h{
+    background: none;
+}
